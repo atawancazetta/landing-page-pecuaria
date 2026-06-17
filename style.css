@@ -32,7 +32,6 @@
 
 html { 
     scroll-behavior: smooth; 
-    scroll-padding-top: 80px; 
     scroll-padding-top: var(--header-height-scrolled); 
 }
 
@@ -147,22 +146,31 @@ body::before {
 
 #cabecalho-principal .container { 
     display: grid;
-    grid-template-columns: 1fr auto 1fr; /* Colunas iguais para centralização perfeita */
+    grid-template-columns: repeat(3, 1fr); /* Divide em 3 partes iguais para centralização real */
+    max-width: 100%; /* Remove a trava de 1200px para permitir o alinhamento total nas bordas */
+    padding: 0 4%; /* Adiciona um respiro lateral flexível para o logo e o menu */
     align-items: center;
     min-height: var(--header-height); 
-    transition: var(--transicao); 
+    transition: var(--transicao-suave); 
 }
 
 #cabecalho-principal .nav-principal-container {
     display: flex;
-    justify-content: flex-end;
+    justify-self: end;
     align-items: center;
     width: auto;
+}
+
+.nav-social {
+    display: flex;
+    justify-content: center;
+    justify-self: center;
 }
 
 .logo { 
     display: flex; 
     align-items: center; 
+    justify-self: start;
     z-index: 10;
 }
 
@@ -174,10 +182,6 @@ body::before {
     margin: -15px 0;
     position: relative;
     z-index: 10;
-}
-
-.nav-social {
-    justify-self: center; /* Garante que as redes fiquem no meio exato */
 }
 
 #cabecalho-principal.rolagem .container { min-height: var(--header-height-scrolled); }
@@ -254,6 +258,7 @@ body::before {
 .link-social .fa-instagram {
     background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 0 1px rgba(0,0,0,0.2));
 }
@@ -291,7 +296,7 @@ body::before {
     text-align: left;
     color: var(--branco);
     background-size: cover;
-    background-position: center 20%;
+    background-position: center 30%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     image-rendering: -webkit-optimize-contrast;
@@ -312,8 +317,8 @@ body::before {
     left: 0;
     width: 100%; 
     height: 100%;
-    /* Gradiente natural e profissional: 45% de opacidade na área do texto (esquerda) e total clareza na área do rebanho (direita) */
-    background: linear-gradient(90deg, rgba(18, 33, 24, 0.45) 0%, rgba(18, 33, 24, 0.15) 55%, rgba(18, 33, 24, 0) 100%);
+    /* Gradiente aprimorado: Lado esquerdo mais denso (0.8) para legibilidade e transição suave para o transparente no lado direito */
+    background: linear-gradient(90deg, rgba(12, 22, 16, 0.85) 0%, rgba(12, 22, 16, 0.5) 45%, rgba(12, 22, 16, 0) 100%);
 }
 
 .hero-conteudo {
@@ -385,6 +390,7 @@ body::before {
 #titulo-hero .char {
     background: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -433,6 +439,12 @@ body::before {
     padding: 10px;
     background: var(--branco);
     border-radius: 0;
+}
+
+/* Ajuste específico para a imagem do Tabapuã não cortar o cupim */
+#tabapua .info-imagem img {
+    object-fit: contain;
+    background: #fdfdfd; /* Fundo neutro para preencher as laterais se necessário */
 }
 
 /* Diferenciais do rebanho */
@@ -528,6 +540,7 @@ body::before {
     #cabecalho-principal .container {
         display: flex;
         justify-content: space-between;
+        padding: 0 1rem; /* Retorna ao padding padrão em telas menores */
     }
 
     .redes-nav-centro { 
