@@ -659,6 +659,11 @@ body::before {
         padding: 0;
     }
 
+    #tabapua .info-imagem img {
+        aspect-ratio: auto; /* Permite que o touro apareça por inteiro sem o corte do cupim no mobile */
+        object-fit: contain;
+    }
+
     .info-texto h3 {
         font-size: 1.8rem;
         text-align: center;
