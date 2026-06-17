@@ -629,6 +629,12 @@ body::before {
 
     .grade-rebanho { grid-template-columns: 1fr; }
 
+    .grade-rebanho .cartao-animal img {
+        height: auto; /* Remove os 600px fixos para mostrar o animal inteiro */
+        object-fit: contain;
+        background-color: #fdfdfd; /* Fundo neutro caso a imagem tenha proporção diferente */
+    }
+
     .hero-conteudo { 
         text-align: left; 
         margin-top: 5vh;
