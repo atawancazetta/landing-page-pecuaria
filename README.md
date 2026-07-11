@@ -6,7 +6,7 @@ Este projeto é uma landing page institucional para a **Pecuária Tabapuã SAF**
 
 > **Nota:** Substitua o caminho abaixo pela imagem de screenshot do seu projeto quando estiver pronto.
 
-![Preview da Landing Page](./assets/screenshot.png)
+![Preview da Landing Page](./assets/img-readme.jpeg)
 
 ## 🔗 Link para Acesso
 
